@@ -28,6 +28,9 @@ apt-get -y install phpmyadmin
 # Silence apache
 echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
+echo -e "\n--- Install phpMyAdmin ---\n"
+apt-get -y install vim php5-curl
+
 echo -e "\n--- Enabling mod-rewrite ---\n"
 # " > /dev/null 2>&1" is used to silence the output
 a2enmod rewrite
@@ -35,6 +38,6 @@ a2enmod rewrite
 echo -e "\n--- Restarting Apache ---\n"
 service apache2 restart
 
-echo -e "\n--- Setting document root to public directory ---\n"
-rm -rf /var/www
-ln -fs /vagrant/public /var/www
+#echo -e "\n--- Setting document root to public directory ---\n"
+# rm -rf /var/www
+# ln -fs /vagrant/public /var/www
